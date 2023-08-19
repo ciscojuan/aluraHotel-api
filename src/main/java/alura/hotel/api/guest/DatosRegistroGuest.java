@@ -1,6 +1,5 @@
 package alura.hotel.api.guest;
 
-import alura.hotel.api.booking.Booking;
 import alura.hotel.api.booking.DatosRegistroBooking;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;

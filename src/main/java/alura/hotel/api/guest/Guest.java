@@ -1,7 +1,7 @@
 package alura.hotel.api.guest;
 
 import alura.hotel.api.booking.Booking;
-
+import alura.hotel.api.controller.DatosActualizarGuest;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,8 +13,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name="guests")
-@Entity(name="Guest")
+@Table(name = "guests")
+@Entity(name = "Guest")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 
 public class Guest {
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nombre;
 	private String apellido;
@@ -32,7 +32,7 @@ public class Guest {
 	private String birthday;
 	@Embedded
 	private Booking reserva;
-	
+
 	public Guest(DatosRegistroGuest datosRegistroGuest) {
 		this.nombre = datosRegistroGuest.nombre();
 		this.apellido = datosRegistroGuest.apellido();
@@ -42,5 +42,19 @@ public class Guest {
 		this.birthday = datosRegistroGuest.birthday();
 		this.reserva = new Booking(datosRegistroGuest.reserva());
 	}
-}
 
+	public void actualizarDatos(DatosActualizarGuest datosActualizarGuest) {
+
+		if (datosActualizarGuest.nombre() != null && datosActualizarGuest.email() != null
+				&& datosActualizarGuest.email() != null && datosActualizarGuest.telefono() != null
+				&& datosActualizarGuest.birthday() != null) {
+			this.nombre = datosActualizarGuest.nombre();
+			this.apellido = datosActualizarGuest.apellido();
+			this.email = datosActualizarGuest.email();
+			this.telefono = datosActualizarGuest.telefono();
+			this.birthday = datosActualizarGuest.birthday();
+
+		}
+
+	}
+}

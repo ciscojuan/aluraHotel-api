@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS aluraHotel;
+CREATE TABLE IF NOT EXISTS guests ( 
+    id INT AUTO_INCREMENT NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    apellido VARCHAR(255) NOT NULL,
+    documento VARCHAR(255) NOT NULL UNIQUE,
+    telefono VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    birthday VARCHAR(255) NOT NULL,
+    entrada VARCHAR(255) NOT NULL,
+    salida VARCHAR(255) NOT NULL,
+    valor VARCHAR(255) NOT NULL,
+    payment VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+    );

@@ -1,7 +1,6 @@
 package alura.hotel.api.guest;
 
 import alura.hotel.api.booking.Booking;
-import alura.hotel.api.controller.DatosActualizarGuest;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -45,16 +44,27 @@ public class Guest {
 
 	public void actualizarDatos(DatosActualizarGuest datosActualizarGuest) {
 
-		if (datosActualizarGuest.nombre() != null && datosActualizarGuest.email() != null
-				&& datosActualizarGuest.email() != null && datosActualizarGuest.telefono() != null
-				&& datosActualizarGuest.birthday() != null) {
+		if(datosActualizarGuest.nombre() != null) {
 			this.nombre = datosActualizarGuest.nombre();
-			this.apellido = datosActualizarGuest.apellido();
-			this.email = datosActualizarGuest.email();
-			this.telefono = datosActualizarGuest.telefono();
-			this.birthday = datosActualizarGuest.birthday();
-
 		}
+		
+		if(datosActualizarGuest.apellido() != null) {
+			this.apellido = datosActualizarGuest.apellido();
+		}
+		
+		if(datosActualizarGuest.email() != null){
+			this.email = datosActualizarGuest.email();
+		}
+		
+		if(datosActualizarGuest.telefono() != null) {
+			this.telefono = datosActualizarGuest.telefono();
+		}
+		
+		if(datosActualizarGuest.birthday() != null) {
+			this.birthday = datosActualizarGuest.birthday();
+		}
+		
+			
 
 	}
 }

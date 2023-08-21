@@ -1,10 +1,9 @@
-package alura.hotel.api.controller;
+package alura.hotel.api.guest;
 
 import jakarta.validation.constraints.NotNull;
 
 public record DatosActualizarGuest (
-    @NotNull
-    Long  id,
+    @NotNull Long  id,
     String nombre,
     String apellido,
     String telefono,
